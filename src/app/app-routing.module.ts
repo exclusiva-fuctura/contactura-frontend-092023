@@ -11,9 +11,10 @@ const routes: Routes = [
   {path: '', redirectTo:'login', pathMatch:'full'},
   {path:'login', component: LoginComponent},
   {path:'cadastro', component: CadastroComponent},
-  {path:'inicial', component: DashboardComponent},
+  {path:'dashboard', component: DashboardComponent},
   {path: 'relatorios/despesas', component: DespesasComponent},
   {path: 'relatorios/receitas', component: ReceitasComponent},
+  { path: 'lancamentos', loadChildren: () => import('./lancamentos/lancamentos.module').then(m => m.LancamentosModule) },
   {path:'**', component: PageNotFoundComponent},
 ];
 

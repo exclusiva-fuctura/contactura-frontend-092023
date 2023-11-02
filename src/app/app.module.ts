@@ -13,6 +13,8 @@ import { DespesasComponent } from './relatorios/despesas/despesas.component';
 import { ReceitasComponent } from './relatorios/receitas/receitas.component';
 import { MaterialModule } from './material/material.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AppState } from './app.state';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -27,11 +29,14 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    SharedModule,
     MaterialModule,
     ReactiveFormsModule,
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [
+    AppState
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
